@@ -1,0 +1,111 @@
+////c语言提供的关键字auto double int struct break else long switch
+//
+//case enum register typedef char extern return union
+//
+//const float short unsigned continue for signed void
+//
+//default goto sizeof volatile do if while static
+//auto 是自动的 - 每个局部变量是auto修饰的
+#include <stdio.h>
+
+void test()//这里void为虚函数作为功能参数，在后面的主函数中直接调用
+//·虚函数返回类型
+//
+//·虚函数作为功能参数
+//
+////·空指针声明
+{
+	int a = 1;
+	a++;
+	printf("%d", a);
+}
+int main()
+{
+	int a = 10;//自动创建自动更改自动销毁，属于auto变量，auto省略掉了
+	//break在循环语句里面使用
+	//case语句
+	//char字符类型
+	//const常变量
+	//continue继续
+	//default默认
+	//do do while寻呼按
+	//double双精度
+	//else if else循环
+	//enum枚举
+	//extern声明外部符号 比如不同源文件中的符号调用
+	//float
+	// for循环
+	//goto语句
+	//if
+	//int
+	//long
+	//register
+	register int num = 100;//建议num的值存放在寄存器中，起到建议的作用，编译器自己做决定
+	//return设置返回的值
+	//short 短整型
+	//signed 有符号的
+	//unsigned 无富豪的
+	//sizeof 求大小
+	//static 静态的
+	//struct 结构的
+	//union 联合体 共用体
+	//void 无或者空
+	//volatile
+	//while
+	//常见的define include不是关键字 陈为预处理指令
+	//typedfy 类型重定义
+	typedef unsigned int u_int;//将unsigned int定个别名叫u_int
+	u_int num1 = 100;
+	//static 的用法：1.修饰局部变量 2. 修饰全局变量 3.修饰函数  在循环中使被修饰的值不变
+
+	int i = 0;
+	while (i < 10)
+	{
+		test();
+
+		i++;
+	}
+
+	return 0;
+}
+//输出2222222222
+//测试static的应用
+//#include <stdio.h>
+//void test()
+//{
+//	static int a = 1;//a的生命周期被改变了，本质是改变了变量的存储类型
+//	a++;
+//	printf("%d\t", a);
+//
+//}
+//int main()
+//{
+//	int i = 0;
+//	while (i < 10)
+//	{
+//		test();
+//		i++;
+//	}
+//	return 0;
+//}
+////2       3       4       5       6       7       8       9       10      11
+//测试static的应用
+#include <stdio.h>
+void test()
+{
+	static int a = 1;//a的生命周期被改变了，本质是改变了变量的存储类型
+	a++;
+	printf("%d\t", a);
+
+}
+int main()
+{
+	int i = 0;
+	while (i < 10)
+	{
+		test();
+		i++;
+	}
+	return 0;
+}
+//2       3       4       5       6       7       8       9       10      11
