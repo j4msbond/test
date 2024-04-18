@@ -1,0 +1,30 @@
+//struct 结构体描述复杂对象
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+//创建一个学生
+struct stu
+{
+	char name[20];
+	int age;
+	double score;
+};
+//创建一个书的类型
+struct book
+{
+	char name[20];
+	float price;
+	char id[30];
+
+};
+int main()
+{
+	struct stu s = { "张三",20, 85.5 };//将所创建的结构体的内容初始化
+	//打印结构体中的成员
+	printf("%s %d %lf\n", s.name, s.age, s.score);//s. 的操作直接找出结构体s中的成员
+	struct stu * ps = &s;//ps前面加个*是将ps作为指针，&是取地址，(*ps) = s
+	printf("%s,%d,%lf\n", (*ps).name, (*ps).age, (*ps).score);
+	printf("%s,%d,%lf\n", ps->name, ps->age, ps->score);//通过ps指针找到s，再而用->操作符进行成员查找
+	//三次结果打印的结果一样
+	return 0;
+
+}
