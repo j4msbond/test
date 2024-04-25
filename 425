@@ -1,0 +1,39 @@
+//循环语句：while for do while
+//c语言中由分号隔开的就是一个语句
+
+//if 语句结构
+//if(表达式)
+//	();（只有真时被执行）
+//else
+//	();
+//多分支时用else if
+#include <stdio.h>
+#define  _CRT_SECURE_NO_WARNINGS
+
+int main()
+{
+	int age = 27;
+	if (age >= 18)
+		printf("成年\n");//此处语句不会执行什么都不会打印
+	else//else 与离得最近的if匹配而不是与之对齐的匹配
+		printf("未成年\n");//if else 只能控制一条语句，如果需要控制多条语句时需要大括号
+	//18 <= age <20这种表达时错误的
+	//正确表达：age >= 18 &&(and) age < 26
+
+
+}
+//if ()
+//{
+//	return x;
+//
+//}
+//return y;
+//if ()
+//{
+//	return x;
+//}
+//else
+//{
+//	return y;
+//}
+//上面两段代码的效果一样-
